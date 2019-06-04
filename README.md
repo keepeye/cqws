@@ -1,6 +1,11 @@
 一个酷Q-HTTP API插件的，支持多客户端的，反向websocket服务[开发中]
 ========
 
+插件必须的配置：
+
+    - ws_reverse_url 设置为服务器ws地址，例如 ws://x.x.x.x:2019/ws
+    - use_ws_reverse 设置为true
+    - post_message_format 设置为true
 
 例子：
 
