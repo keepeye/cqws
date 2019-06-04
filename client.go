@@ -34,13 +34,10 @@ type Client struct {
 }
 
 // 发送消息
-func (c *Client) SendMessage(toUserID uint, text string) error {
+func (c *Client) SendMessage(action string, params map[string]interface{}) error {
 	m := make(map[string]interface{})
-	m["action"] = "send_private_msg"
-	m["params"] = map[string]interface{}{
-		"user_id": toUserID,
-		"message": text,
-	}
+	m["action"] = action
+	m["params"] = params
 	b, err := json.Marshal(&m)
 	if err != nil {
 		return err
