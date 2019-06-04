@@ -81,7 +81,6 @@ func (c *Client) writePump() {
 	}()
 	for {
 		select {
-		// 优先处理心跳
 		case <-ticker.C:
 			_ = c.conn.SetWriteDeadline(time.Now().Add(writeWait))
 			if err := c.conn.WriteMessage(websocket.PingMessage, nil); err != nil {
